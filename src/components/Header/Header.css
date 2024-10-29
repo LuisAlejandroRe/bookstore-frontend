@@ -1,0 +1,115 @@
+.header {
+  height: 70px;
+  width: 90%;
+  margin: 10px auto;
+  border-radius: 15px;
+  border: solid black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(255, 255, 255, 0.9);
+  position: sticky;
+  top: 10px;
+  z-index: 50;
+  -webkit-box-shadow: 0px 0px 100px 5px rgba(0, 0, 0, 0.9);
+  -moz-box-shadow: 0px 0px 100px 5px rgba(0, 0, 0, 0.9);
+  box-shadow: 0px 0px 100px 5px rgba(0, 0, 0, 0.9);
+}
+
+.header__logo {
+  height: 30px;
+  margin-left: 30px;
+  transition: all ease-in 200ms;
+}
+
+.header__logo:hover {
+  height: 25px;
+}
+
+.header__nav {
+  display: flex;
+  justify-content: space-evenly;
+  margin-right: 10px;
+}
+
+.header__nav a {
+  text-decoration: none;
+}
+
+.header__option {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-left: 20px;
+  margin-right: 20px;
+  color: black;
+}
+
+.header__option:hover {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.header__optionLineOne {
+  font-size: 18px;
+  transition: all ease-in 200ms;
+  text-decoration: none;
+}
+
+.header__optionLineOne:hover {
+  font-size: 15px;
+}
+
+.header__optionLineTwo {
+  font-size: 20px;
+  font-weight: 800;
+  transition: all ease-in 200ms;
+}
+
+.header__optionLineTwo:hover {
+  font-size: 18px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .header {
+    height: 50px;
+    margin: 10px auto;
+    top: 10px;
+  }
+
+  .header__logo {
+    height: 20px;
+    max-height: 12px;
+    margin-left: 5px;
+  }
+
+  .header__logo:hover {
+    height: 2vh;
+  }
+
+  .header__nav {
+    margin-right: 5px;
+  }
+
+  .header__option {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  .header__optionLineOne {
+    font-size: 10px;
+  }
+
+  .header__optionLineOne:hover {
+    font-size: 8px;
+  }
+
+  .header__optionLineTwo,
+  .header__optionLineTwo .MuiSvgIcon-root {
+    font-size: 12px;
+    font-weight: 400;
+  }
+
+  .header__optionLineTwo:hover {
+    font-size: 10px;
+  }
+}

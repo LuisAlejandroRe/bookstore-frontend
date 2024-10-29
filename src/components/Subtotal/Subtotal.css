@@ -1,0 +1,58 @@
+.subtotal {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  flex-basis: 500px;
+  flex-shrink: 1;
+  width: 500px;
+  height: 150px;
+  padding: 20px;
+  margin-top: 30px;
+  font-size: 20px;
+  color: white;
+  border: solid white;
+  border-radius: 15px;
+  background-color: rgba(0, 0, 0, 0.8);
+  -webkit-box-shadow: 0px 0px 100px 5px rgba(0, 0, 0, 0.9);
+  -moz-box-shadow: 0px 0px 100px 5px rgba(0, 0, 0, 0.9);
+  box-shadow: 0px 0px 100px 5px rgba(0, 0, 0, 0.9);
+}
+
+.subtotal > button {
+  cursor: pointer;
+  width: 100%;
+  background: #f0c14b;
+  font-size: 15px;
+  font-family: "Carter One", cursive;
+  color: #111;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 10px;
+  border-color: #f0c14b;
+  transition: all ease-in 200ms;
+}
+
+.subtotal > button:hover {
+  font-size: 13px;
+  -webkit-box-shadow: 0px 0px 40px 10px rgba(240, 190, 70, 0.5);
+  -moz-box-shadow: 0px 0px 40px 10px rgba(240, 190, 70, 0.5);
+  box-shadow: 0px 0px 40px 10px rgba(240, 190, 70, 0.5);
+}
+
+@media only screen and (max-width: 500px) {
+  .subtotal {
+    width: 100%;
+    padding: 10px;
+    font-size: 12px;
+  }
+
+  .subtotal > button {
+    width: 80%;
+    margin: auto;
+    font-size: 10px;
+  }
+
+  .subtotal > button:hover {
+    font-size: 8px;
+  }
+}

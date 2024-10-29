@@ -1,0 +1,119 @@
+.login {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.login__logo {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  object-fit: contain;
+  width: 500px;
+  margin-right: auto;
+  margin-left: auto;
+  transition: all ease-in 200ms;
+}
+
+.login__logo:hover {
+  width: 470px;
+}
+
+.login__container {
+  width: 500px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border: solid black;
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.3);
+  -webkit-box-shadow: 0px 0px 100px 5px rgba(0, 0, 0, 0.9);
+  -moz-box-shadow: 0px 0px 100px 5px rgba(0, 0, 0, 0.9);
+  box-shadow: 0px 0px 100px 5px rgba(0, 0, 0, 0.9);
+}
+
+.login__container > h1 {
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.login__container > form > h5 {
+  margin-bottom: 5px;
+}
+
+.login__container > form > input {
+  height: 30px;
+  margin-bottom: 10px;
+  background-color: white;
+  width: 98%;
+}
+
+.login__container > p {
+  margin-top: 15px;
+  font-size: 15px;
+}
+
+.login__signInButton {
+  cursor: pointer;
+  width: 100%;
+  background: #f0c14b;
+  font-size: 15px;
+  font-family: "Carter One", cursive;
+  color: #111;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 10px;
+  border-color: #f0c14b;
+  transition: all ease-in 200ms;
+}
+
+.login__signInButton:hover {
+  font-size: 13px;
+  -webkit-box-shadow: 0px 0px 40px 10px rgba(240, 190, 70, 0.5);
+  -moz-box-shadow: 0px 0px 40px 10px rgba(240, 190, 70, 0.5);
+  box-shadow: 0px 0px 40px 10px rgba(240, 190, 70, 0.5);
+}
+
+.login__registerButton {
+  background-color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  width: 100%;
+  font-size: 15px;
+  font-family: "Carter One", cursive;
+  color: white;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 10px;
+  border-color: darkgray;
+  transition: all ease-in 200ms;
+}
+
+.login__registerButton:hover {
+  font-size: 13px;
+  -webkit-box-shadow: 0px 0px 40px 10px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 0px 40px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 40px 10px rgba(0, 0, 0, 0.3);
+}
+
+@media only screen and (max-width: 500px) {
+  .login__logo {
+    max-width: 100%;
+  }
+
+  .login__container {
+    max-width: 80%;
+    height: 70%;
+  }
+
+  .login__container > h1 {
+    font-weight: 300;
+    margin-bottom: 10px;
+  }
+
+  .login__container > p {
+    margin-top: 10px;
+    font-size: 12px;
+  }
+}

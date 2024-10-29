@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: url(https://firebasestorage.googleapis.com/v0/b/clone-e814f.appspot.com/o/stone.background.jpg?alt=media&token=56071e58-0231-4e8b-be11-754e620425fb);
+  background-size: 100%;
+  margin: 0;
+  font-family: "Carter One", cursive;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+main {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
