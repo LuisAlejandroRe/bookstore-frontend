@@ -43,7 +43,7 @@ function Payment() {
       const response = await client.post(
         "/payment",
         {
-          total: state.totalAmount * 100,
+          total: state.totalAmount,
         },
         {
           headers: {
@@ -52,27 +52,40 @@ function Payment() {
         }
       );
 
-      const { error, paymentIntent } = await stripe.confirmCardPayment(response.data.body.clientSecret, {
-        payment_method: {
-          card,
-        },
-      });
-      if(error) return setError(error.message ?? 'Error al procesar pago');
+      const { error, paymentIntent } = await stripe.confirmCardPayment(
+        response.data.body.clientSecret,
+        {
+          payment_method: {
+            card,
+          },
+        }
+      );
+      if (error) return setError(error.message ?? "Error al procesar pago");
       if (!paymentIntent) return setError("Error al procesar pago");
 
-      console.log({
-        basket: state.items,
-        paymentId: paymentIntent.id,
-        amount: paymentIntent.amount,
-        created: paymentIntent.created,
-      });
+      await client.post(
+        "/order",
+        {
+          order: {
+            items: state.items,
+            paymentId: paymentIntent.id,
+            amount: paymentIntent.amount,
+            created: paymentIntent.created,
+          },
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
 
       setSucceeded(true);
       dispatch({
         type: "CLEAR_CART",
       });
 
-      // navigate("/orders");
+      navigate("/orders");
     } catch (error) {
       console.log(error);
       setError("Error al procesar pago");

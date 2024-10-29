@@ -1,16 +1,12 @@
-import React from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect,
-} from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Header from "./components/Header/Header";
 import Home from "./components/Home/Home";
 import Footer from "./components/Footer/Footer";
 import Login from "./components/Login/Login";
 import Checkout from "./components/Checkout/Checkout";
 import PaymentWrapper from "./components/Payment/PaymentWrapper";
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
+import Orders from "./components/Orders/Orders";
 
 const router = createBrowserRouter([
   {
@@ -44,17 +40,25 @@ const router = createBrowserRouter([
     ),
   },
   {
+    path: "/orders",
+    element: (
+      <main>
+        <Header />
+        <PrivateRoute>
+          <Orders />
+        </PrivateRoute>
+        <Footer />
+      </main>
+    ),
+  },
+  {
     path: "/login",
     element: <Login />,
   },
 ]);
 
 function App() {
-  return (
-    <React.StrictMode>
-      <RouterProvider router={router} />
-    </React.StrictMode>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;

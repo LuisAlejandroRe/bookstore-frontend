@@ -4,9 +4,10 @@ import { CartItem } from "../../types";
 
 interface Props {
   book: CartItem;
+  hideButton?: boolean;
 }
 
-function CheckoutProduct({ book }: Props) {
+function CheckoutProduct({ book, hideButton = false }: Props) {
   const { dispatch } = useCart();
 
   const removeFromBasket = () => {
@@ -34,7 +35,9 @@ function CheckoutProduct({ book }: Props) {
             <p>⭐</p>
           ))}
         </div>
-        <button onClick={removeFromBasket}>Quitar del carrito</button>
+        {!hideButton && (
+          <button onClick={removeFromBasket}>Quitar del carrito</button>
+        )}
       </div>
     </div>
   );
